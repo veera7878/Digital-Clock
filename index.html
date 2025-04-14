@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Clock</title>
+    <style>
+        body {
+            height: 100vh;
+            background-image: url(https://img.freepik.com/free-vector/gradient-numerology-background_23-2150051043.jpg?ga=GA1.1.694341658.1741707533&semt=ais_hybrid&w=740);
+            margin: 0;
+            border-image-width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Segoe Ul', sans-serif;
+        }
+        
+        .glass-clock {
+            background: rgba(255, 255, 255, 0.1);
+            box-shadow: 0.8px 20px 0 rgba(0, 0, 0, 0.3);
+            padding: 30px 50px;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: (blur 20px);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            color: #fff;
+            font-size: 3rem;
+            letter-spacing: 2px;
+            text-align: center
+        }
+    </style>
+</head>
+
+<body>
+    <div class="glass-clock" id="clock"> --:--:--</div>
+
+</body>
+<script>
+    function updateClock() {
+        const now = new Date();
+        const time = now.toLocaleTimeString();
+        document.getElementById("clock").textContent = time;
+
+    }
+    setInterval(updateClock, 1000);
+    updateClock();
+</script>
+
+</html>
